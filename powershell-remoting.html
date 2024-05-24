@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+
+<body>
+    <div class="sidenav">
+        <iframe src="header.html" iframetag></iframe>
+    </div>
+    <div class="main">
+        <h2>Powershell Remoting</h2>
+
+<pre>
+    
+###################################################################################################
+### 10 - PowerShell remoting
+###################################################################################################
+
+PowerShell remoting must be enabled on the remote computer. Use the Enable-PSRemoting cmdlet to enable PowerShell remoting.
+
+
+ Enable-PSRemoting
+
+Example 1: One-To-One Remoting
+
+
+ $Cred = Get-Credential
+ Enter-PSSession -ComputerName dc01 -Credential $Cred
+# [dc01]: PS C:\Users\Administrator\Documents>
+# [dc01]: PS C:\Users\Administrator\Documents>cd \
+# [dc01]: PS C:\> 
+# [dc01]: PS C:\> Get-Process | Get-Member
+# [dc01]: PS C:\> Exit-PSSession
+
+---------------------------------------------------------------------------------------------------
+
+# Example 1: One-To-Many Remoting
+
+Invoke-Command -ComputerName dc01, sql02, web01 {Get-Service -Name W32time} -Credential $Cred
+
+</pre>
+
+    </div>
+</body>
+
+</html>

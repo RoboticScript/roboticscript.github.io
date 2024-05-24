@@ -1,0 +1,35 @@
+How TO - Filter/Search List
+---------------------------
+https://www.w3schools.com/howto/howto_js_filter_lists.asp
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_list
+
+How TO - Fixed Sidebar
+----------------------
+https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_sidenav_fixed
+
+External CSS
+------------
+https://www.w3schools.com/html/html_css.asp
+
+Example:
+<head>
+  <link rel="stylesheet" href="mystyles.css">
+</head>
+
+
+/* Prevent double borders */
+
+
+
+01 - About PowerShell
+02 - PowerShell Variables
+03 - PowerShell Operators
+04 - Conditional Statements
+05 - PowerShell Loops
+06 - PowerShell String
+07 - PowerShell Functions
+08 - Try Catch Finally
+09 - PowerShell cmdlet
+10 - PowerShell Remoting
+11 - PowerShell Modules

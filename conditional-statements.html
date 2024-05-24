@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+
+<body>
+    <div class="sidenav">
+        <iframe src="header.html" iframetag></iframe>
+    </div>
+    <div class="main">
+        <h2>Conditional Statements</h2>
+        <pre>
+
+
+###################################################################################################
+### 04 - Conditional Statements
+###################################################################################################
+
+# 01 - If Statement
+# 02 - If-else Statement
+# 03 - Else-if Statement
+# 04 - Switch Statement
+
+#------------------------------------------------
+# EXAMPLE
+$x = 5
+if($x -eq 5){
+    write-host("$x is equal to 5")
+}
+#------------------------------------------------
+# EXAMPLE
+$x = 10
+if($x -eq 10){
+    write-host("$x is equal to 10")
+}else {
+    write-host("$x is not equal to 10")
+}
+#------------------------------------------------
+# EXAMPLE
+$x = 11
+if($x -eq 10){
+    write-host("$x is equal to 10")
+}else {
+    write-host("$x is not equal to 10")
+}
+#------------------------------------------------
+# EXAMPLE: SWITCH
+
+[int]$a = 3
+switch($a) {
+    1 {Write-Host "You have enter 1"}
+    2 {Write-Host "You have enter 2"}
+    3 {Write-Host "You have enter 3"}
+    4 {Write-Host "You have enter 4"}
+}
+        </pre>
+    </div>
+</body>
+
+</html>

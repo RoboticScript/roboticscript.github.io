@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+
+<body>
+    <div class="sidenav">
+        <iframe src="header.html" iframetag></iframe>
+    </div>
+    <div class="main">
+        <h2>Powershell Loops</h2>
+
+<pre>
+
+    ###################################################################################################
+### 05 - PowerShell Loops
+###################################################################################################
+
+# 01 - For Loop
+# 02 - Foreach Loop
+# 03 - While Loop
+# 04 - Do-while Loop
+# 05 - Continue and Break Statement
+
+
+#------------------------------------------------
+# EXAMPLE
+
+$numbers = 1,2,3,4,5,6,7,8,9,10
+foreach ($number in $numbers) {
+Write-Host $number
+Start-Sleep -Seconds 1
+}
+
+#------------------------------------------------
+# EXAMPLE
+$names = "server1","server2","server3","server4","server5"
+foreach ($name in $names) {
+Write-Host $name
+Start-Sleep -Milliseconds 500
+}
+
+</pre>
+
+    </div>
+</body>
+
+</html>

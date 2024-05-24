@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+
+<body>
+    <div class="sidenav">
+        <iframe src="header.html" iframetag></iframe>
+    </div>
+    <div class="main">
+        <h2>Powershell Try Catch Final</h2>
+
+<pre>
+    ###################################################################################################
+### 08- Try Catch Finally
+###################################################################################################
+
+
+https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_try_catch_finally?view=powershell-7.3
+
+# Save below code script.ps1 
+
+#------------------------------------------------
+# EXAMPLE
+Write-Host "Example 1" -ForegroundColor Magenta
+try { NonsenseString }
+catch { "An error occurred - 1." }
+
+#------------------------------------------------
+# EXAMPLE
+Write-Host "Example 2" -ForegroundColor Magenta
+try { $NonsenseString }
+catch { "An error occurred - 2." }
+Write-Host "No error found"
+
+#------------------------------------------------
+# EXAMPLE
+Write-Host "Example 3" -ForegroundColor Magenta
+try { NonsenseString }
+catch {
+  Write-Host "An error occurred - 3."
+  Write-Host $_
+}
+
+#------------------------------------------------
+## OUTPUT ##
+
+# PS C:\roboticscript\examples> .\try_catch_finally.ps1
+# Example 1
+# An error occurred - 1.
+# Example 2
+# No error found
+# Example 3
+# An error occurred - 3.
+# The term 'NonsenseString' is not recognized as a name of a cmdlet, function, script file, or executable program.
+# Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+</pre>
+
+    </div>
+</body>
+
+</html>
