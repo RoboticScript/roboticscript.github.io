@@ -1,35 +1,113 @@
-How TO - Filter/Search List
----------------------------
-https://www.w3schools.com/howto/howto_js_filter_lists.asp
-https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_list
+###################################################################################################
+<!DOCTYPE html>
+<html>
 
-How TO - Fixed Sidebar
-----------------------
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Active Directory</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <iframe src="sidebar.html"></iframe>
+    </div>
+
+    <div class="main">
+
+    <pre>
+
+    </pre>
+
+    </div>
+
+###################################################################################################
+Black square
+&#8718;
+
+###################################################################################################
+MY NOTES: required three files
+
+mystyle.css
+sidebar.html
+index.html or any html files
+
+=> index.html is calling mystyle.css and sidebar.html files
+=> sidebar.html file containing their own css.
+
+###################################################################################################
+### Create a Fixed Sidebar
+
 https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp
 https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_sidenav_fixed
 
-External CSS
-------------
+## NOTES
+
+REQUIRED STYLE
+.sidenav
+.main
+@media
+
+REMOVE STYLE
+body
+.sidenav a
+.sidenav a:hover
+
+###################################################################################################
+### Create A Search List
+
+https://www.w3schools.com/howto/howto_js_filter_lists.asp
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_list
+
+## NOTES
+
+REQUIRED STYLE
+#myInput
+#myUL
+#myUL li a
+#myUL li a:hover:not(.header)
+
+REMOVE STYLE
+*
+
+###################################################################################################
+### External CSS
+
 https://www.w3schools.com/html/html_css.asp
 
 Example:
 <head>
-  <link rel="stylesheet" href="mystyles.css">
+  <link rel="stylesheet" href="mystyle.css">
 </head>
 
-
+Example: Comments
 /* Prevent double borders */
 
+###################################################################################################
+### CSS Tutorial
 
+How To Add CSS
+https://www.w3schools.com/css/css_howto.asp
+CSS Comments
+https://www.w3schools.com/css/css_comments.asp
+CSS Selectors
+https://www.w3schools.com/css/css_selectors.asp
 
-01 - About PowerShell
-02 - PowerShell Variables
-03 - PowerShell Operators
-04 - Conditional Statements
-05 - PowerShell Loops
-06 - PowerShell String
-07 - PowerShell Functions
-08 - Try Catch Finally
-09 - PowerShell cmdlet
-10 - PowerShell Remoting
-11 - PowerShell Modules
+###################################################################################################
+### NOTES
+
+font-family: Arial, sans-serif;
+font-family: Verdana, sans-serif;
+font-family: 'Courier New', monospace;
+font-family: 'Brush Script MT', cursive;
+
+001) It uses the default yellow color for highlighting. This can be changed using CSS properties.
+002)
+
+###################################################################################################
+### Each page
+
+pre
+
+###################################################################################################
