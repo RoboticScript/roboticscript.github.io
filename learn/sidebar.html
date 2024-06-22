@@ -1,89 +1,103 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-#myInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 12px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 13px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-}
+    .logo {
+      font-family: system-ui;
+      /* font-family: "Console", "Courier New", monospace; */
+      font-size: 22px;
+      text-align: center;
+      color: orangered;
+      background-color: black;
+      font-weight: bold;
+    }
 
-#myUL {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
+    #myInput {
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 13px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+    }
+
+    #myUL {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
 
 
-#myUL li a {
-  border: 1px solid #ddd;
-  margin-top: -1px; /* Prevent double borders */
-  background-color: #f6f6f6;
-  padding: 7px; /* rs: Create horizontal space between content (sidebar) */
-  text-decoration: none;
-  font-size: 12px;
-  font-family: Verdana, sans-serif;
-  color: black;
-  display: block;
-}
+    #myUL li a {
+      border: 1px solid #ddd;
+      margin-top: -1px;
+      /* Prevent double borders */
+      background-color: #f6f6f6;
+      padding: 7px;
+      /* rs: Create horizontal space between content (sidebar) */
+      text-decoration: none;
+      font-size: 12px;
+      font-family: Verdana, sans-serif;
+      color: black;
+      display: block;
+    }
 
-#myUL li a:hover:not(.header) {
-  background-color: #eee;
-}
-</style>
+    #myUL li a:hover:not(.header) {
+      background-color: #eee;
+    }
+  </style>
 </head>
 
 <body>
 
-    <h1 style="text-align: center;color: orangered;">RoboticScript</h1>
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search in sidebar.." title="Type in a name">
+  <div class="logo">RoboticScript  </div>
+  <hr>
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search in sidebar.." title="Type in a name">
 
-    <ul id="myUL">
+  <ul id="myUL">
 
 
-        <li><a href="index.html" target="_parent">HOME</a></li>
-        <li><a href="azure.html" target="_parent">AZURE</a></li>
-        <li><a href="sc-300.html" target="_parent">SC-300</a></li>
-        <li><a href="az-800.html" target="_parent">AZ-800</a></li>
-        <li><a href="az-801.html" target="_parent">AZ-801</a></li>
-        <li><a href="az-104.html" target="_parent">AZ-104</a></li>
-        <li><a href="active-directory.html" target="_parent">ACTIVE DIRECTORY</a></li>    
-        <li><a href="aad.html" target="_parent">AAD</a></li>
-        <li><a href="ad-connect.html" target="_parent">AD CONNECT</a></li> 
-        <li><a href="adfs.html" target="_parent">ADFS</a></li>  
-        <li><a href="ports.html" target="_parent">PORTS</a></li>
-        <li><a href="html-notes.html" target="_parent">HTML</a></li>
-        <li><a href="../index.html" target="_blank">POWERSHELL</a></li>
-    </ul>
-    <script>
-        function myFunction() {
-            var input, filter, ul, li, a, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            ul = document.getElementById("myUL");
-            li = ul.getElementsByTagName("li");
-            for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsByTagName("a")[0];
-                txtValue = a.textContent || a.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
-                }
-            }
+    <li><a href="index.html" target="_parent">HOME</a></li>
+    <li><a href="azure.html" target="_parent">AZURE</a></li>
+    <li><a href="sc-300.html" target="_parent">SC-300</a></li>
+    <li><a href="az-800.html" target="_parent">AZ-800</a></li>
+    <li><a href="az-801.html" target="_parent">AZ-801</a></li>
+    <li><a href="az-104.html" target="_parent">AZ-104</a></li>
+    <li><a href="active-directory.html" target="_parent">ACTIVE DIRECTORY</a></li>
+    <li><a href="aad.html" target="_parent">AAD</a></li>
+    <li><a href="ad-connect.html" target="_parent">AD CONNECT</a></li>
+    <li><a href="adfs.html" target="_parent">ADFS</a></li>
+    <li><a href="ports.html" target="_parent">PORTS</a></li>
+    <li><a href="html-notes.html" target="_parent">HTML</a></li>
+    <li><a href="../index.html" target="_blank">POWERSHELL</a></li>
+  </ul>
+  <script>
+    function myFunction() {
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName("li");
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
         }
-    </script>
+      }
+    }
+  </script>
 
 </body>
 
