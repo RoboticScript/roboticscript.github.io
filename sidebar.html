@@ -1,101 +1,118 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-* {
-  box-sizing: border-box;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-#myInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 12px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 13px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-}
+    .logo {
+      font-family: system-ui;
+      /* font-family: "Console", "Courier New", monospace; */
+      font-size: 22px;
+      text-align: center;
+      color: orangered;
+      background-color: black;
+      font-weight: bold;
+    }
 
-#myUL {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
+    #myInput {
+      background-image: url('/css/searchicon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 13px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+    }
 
-#myUL li a {
-  border: 1px solid #ddd;
-  margin-top: -1px; /* Prevent double borders */
-  background-color: #f6f6f6;
-  padding: 7px; /* rs: Create horizontal space between content (sidebar) */
-  text-decoration: none;
-  font-size: 12px;
-  font-family: Verdana, sans-serif;
-  color: black;
-  display: block
-}
+    #myUL {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
 
-#myUL li a:hover:not(.header) {
-  background-color: #eee;
-}
-</style>
+    #myUL li a {
+      border: 1px solid #ddd;
+      margin-top: -1px;
+      /* Prevent double borders */
+      background-color: #f6f6f6;
+      padding: 7px;
+      /* rs: Create horizontal space between content (sidebar) */
+      text-decoration: none;
+      font-size: 12px;
+      font-family: Verdana, sans-serif;
+      color: black;
+      display: block
+    }
+
+    #myUL li a:hover:not(.header) {
+      background-color: #eee;
+    }
+  </style>
 </head>
 
 <body>
 
-  <h1 style="text-align: center;color: orangered;">RoboticScript</h1>
-    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search in sidebar.." title="Type in a name">
+  <div class="logo">RoboticScript</div>
+  <hr>
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search in sidebar.." title="Type in a name">
 
-    <ul id="myUL">
+  <ul id="myUL">
 
-      <li><a href="index.html" target="_parent"><b>Programming Concepts</b></a></li>
+    <li><a href="index.html" target="_parent"><b>Programming Concepts</b></a></li>
 
-      <li><a href="about-powershell.html" target="_parent">01 - About PowerShell</a></li>
-      <li><a href="powershell-variables.html" target="_parent">02 - PowerShell Variables</a></li>
-      <li><a href="powershell-operators.html" target="_parent">03 - PowerShell Operators</a></li>
-      <li><a href="conditional-statements.html" target="_parent">04 - Conditional Statements</a></li>
-      <li><a href="powershell-loops.html" target="_parent">05 - PowerShell Loops</a></li>
-      <li><a href="powershell-string.html" target="_parent">06 - PowerShell String</a></li>
-      <li><a href="powershell-functions.html" target="_parent">07 - PowerShell Functions</a></li>
-      <li><a href="try-catch-finally.html" target="_parent">08 - Try Catch Finally</a></li>
-      <li><a href="powershell-cmdlet.html" target="_parent">09 - PowerShell Cmdlet</a></li>
-      <li><a href="powershell-remoting.html" target="_parent">10 - PowerShell Remoting</a></li>
-      <li><a href="powershell-modules.html" target="_parent">11 - PowerShell Modules</a></li>
+    <li><a href="about-powershell.html" target="_parent">01 - About PowerShell</a></li>
+    <li><a href="powershell-variables.html" target="_parent">02 - PowerShell Variables</a></li>
+    <li><a href="powershell-operators.html" target="_parent">03 - PowerShell Operators</a></li>
+    <li><a href="conditional-statements.html" target="_parent">04 - Conditional Statements</a></li>
+    <li><a href="powershell-loops.html" target="_parent">05 - PowerShell Loops</a></li>
+    <li><a href="powershell-string.html" target="_parent">06 - PowerShell String</a></li>
+    <li><a href="powershell-functions.html" target="_parent">07 - PowerShell Functions</a></li>
+    <li><a href="try-catch-finally.html" target="_parent">08 - Try Catch Finally</a></li>
+    <li><a href="powershell-cmdlet.html" target="_parent">09 - PowerShell Cmdlet</a></li>
+    <li><a href="powershell-remoting.html" target="_parent">10 - PowerShell Remoting</a></li>
+    <li><a href="powershell-modules.html" target="_parent">11 - PowerShell Modules</a></li>
 
-      <li><a href="index.html" target="_parent"><b>Script Repository</b></a></li>
-      <li><a href="https://github.com/RoboticScript/PowerShell/" target="_blank">Script Repository</a></li>
-  
+    <li><a href="index.html" target="_parent"><b>Script Repository</b></a></li>
+    <li><a href="https://github.com/RoboticScript/PowerShell/" target="_blank">Script Repository</a></li>
 
-      <li><a href="index.html" target="_parent"><b>Script Repository</b></a></li>        
-      <li><a href="azure-powershell.html" target="_parent">Azure</a></li>
-      <li><a href="active-directory.html" target="_parent">Active Directory</a></li>
-      <li><a href="azure-active-directory.html" target="_parent">Azure Active Directory</a></li>
-      <li><a href="windows-server.html" target="_parent">Windows Server</a></li>
-      <li><a href="visual-studio-code.html" target="_parent">Powershell Editor</a></li>
-      &nbsp;
-      &nbsp;
 
-    </ul>
-    <script>
-        function myFunction() {
-            var input, filter, ul, li, a, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            ul = document.getElementById("myUL");
-            li = ul.getElementsByTagName("li");
-            for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsByTagName("a")[0];
-                txtValue = a.textContent || a.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
-                }
-            }
+    <li><a href="index.html" target="_parent"><b>Script (Product Wise)</b></a></li>
+    <li><a href="azure-powershell.html" target="_parent">Azure</a></li>
+    <li><a href="active-directory.html" target="_parent">Active Directory</a></li>
+    <li><a href="azure-active-directory.html" target="_parent">Azure Active Directory</a></li>
+    <li><a href="windows-server.html" target="_parent">Windows Server</a></li>
+    <li><a href="visual-studio-code.html" target="_parent">Powershell Editor</a></li>
+
+    <li><a href="index.html" target="_parent"><b>Microsoft Exam</b></a></li>
+    <li><a href="exam/index.html" target="_blank">Exam</a></li>
+    &nbsp;
+    &nbsp;
+
+  </ul>
+  <script>
+    function myFunction() {
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName("li");
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
         }
-    </script>
+      }
+    }
+  </script>
 
 </body>
 
