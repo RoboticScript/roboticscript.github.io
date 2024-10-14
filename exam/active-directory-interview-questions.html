@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Active Directory Interview Questions and Answers</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+
+<body>
+    <div class="sidenav">
+        <iframe src="sidebar.html"></iframe>
+      </div>
+
+<div class="main">
+
+
+
+    <pre>
+
+<h1>Active Directory Interview Questions and Answers</h1>
+
+
+<b>Q)</b> What is Active Directory?
+<b>A)</b> Active Directory is a Microsoft technology use to stores information about objects on the network. A directory service,
+such as Active Directory Domain Services (AD DS), provides the methods for storing directory data and
+making this data available to network users and administrators.
+
+For example, AD DS stores information about user accounts, such as names, passwords, phone numbers,
+and so on, and enables other authorized users on the same network to access this information.
+
+<hr style="width:50%;text-align:left;margin-left:0">
+<b>Q)</b> What are the logical components?
+<b>A)</b> Partition, Schema, Domain, Domain tree, Forest, OU, Container.
+
+<hr style="width:50%;text-align:left;margin-left:0">
+<b>Q)</b> What are the physical components?
+<b>A)</b> Domain controller, Data store, Global catalog server, Site, Subnet.
+
+<a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-groups" target="_blank">Click here for more details</a>
+
+<hr style="width:50%;text-align:left;margin-left:0">
+<b>Q)</b> Types of groups in Active Directory?
+<b>A)</b> Security groups: Use to assign permissions to shared resources.
+   Distribution groups: Use to create email distribution lists.
+
+<hr style="width:50%;text-align:left;margin-left:0">
+<b>Q)</b> Types of groups scopes in Active Directory?
+<b>A)</b> Universal
+   Global
+   Domain Local
+
+<a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-groups" target="_blank">Click here for more details</a>
+<a href="https://learn.microsoft.com/en-in/training/modules/introduction-to-ad-ds/3-define-users-groups-computers?ns-enrollment-type=learningpath&ns-enrollment-id=learn.wwl.active-directory-domain-services" target="_blank">Click here for more details</a>
+
+<hr style="width:50%;text-align:left;margin-left:0">
+<b>Q)</b> What is NTLM and Kerberos?
+<b>A)</b> NTLM is an authentication protocol. It was the default protocol used in old windows versions, but
+it's still used today. If for any reason Kerberos fails, NTLM will be used instead.
+NTLM has a challenge/response mechanism.
+
+Kerberos is an authentication protocol. It's the default authentication protocol
+on Windows versions above W2k, replacing the NTLM authentication protocol.
+
+<a href="https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/ntlm-vs-kerberos/ba-p/4120658" target="_blank">Click here for more details</a>
+
+<hr style="width:50%;text-align:left;margin-left:0">
+<b>Q)</b> What are AD DS operations masters or FSMO?
+<b>A)</b> A domain controller that has one of these roles is an operations master. An operations master role
+is also known as a Flexible Single Master Operation (FSMO) role.
+There are five operations master roles:
+
+1. Schema master
+2. Domain-naming master
+3. Infrastructure master
+4. RID master
+5. PDC emulator master
+
+<hr style="width:50%;text-align:left;margin-left:0">
+<b>Q)</b> What are trust relationships? 
+<b>A)</b> Parent and child, Tree-root, External, Realm, Forest, Shortcut.
+
+<a href="https://learn.microsoft.com/en-us/training/modules/introduction-to-ad-ds/4-define-forests-domains" target="_blank">Click here for more details</a>
+
+<hr style="width:50%;text-align:left;margin-left:0">
+
+</pre>
+
+</body>
+
+</html>
