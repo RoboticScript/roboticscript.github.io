@@ -18,7 +18,8 @@ https://www.w3schools.com/css/css_combinators.asp
 /* ---------------------------- */
 
 body {
-  font-family: 'Courier New', monospace;
+  /* font-family: 'Courier New', monospace; */
+  font-family: Verdana, sans-serif;
 }
 
 iframe {
@@ -64,7 +65,8 @@ iframe {
   /* Same as the width of the sidenav */
   font-size: 13px;
   /* Increased text to enable scrolling */
-  font-family: 'Courier New', monospace;
+  /* font-family: 'Courier New', monospace; */
+  font-family: Verdana, sans-serif;
   padding: 0px 10px;
 }
 
@@ -87,6 +89,11 @@ pre {
   font-family: Verdana, sans-serif;
   font-size: 13px;
 
+}
+
+pre hr {
+  color: lightgray;
+  background-color: lightgray;
 }
 
 pre b {
@@ -140,6 +147,7 @@ pre ul {
 
 pre a {
   text-decoration: none;
+  color: orangered;
 }
 
 pre a:hover {
