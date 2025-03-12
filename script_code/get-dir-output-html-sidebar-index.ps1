@@ -1,4 +1,40 @@
-﻿<!DOCTYPE html>
+# Get the directory listing
+$currentLocation = (Get-Location).Path
+$items = Get-ChildItem -Path '.\' -File -Recurse -Exclude "home.html","styles.css","scripts.js","index.html","get-dir-output-html-sidebar-index.ps1",*.doc,*.docx,*.xls,*.xlsx,*.csv
+
+$homepage = ".\home.html"
+
+$htmlRows = foreach ($item in $items) {
+    $name = $item.BaseName
+    $fullPath = $item.FullName
+    #$relativePath = $fullPath -replace [regex]::Escape($currentLocation.Path), ""
+    $relativePath = $fullPath.Substring($currentLocation.Length)
+    $relativePath = $relativePath -replace "\\", "/"
+    #Write-Output $relativePath
+        $link = "<a href='.$relativePath' target='iframe_a' target='_Parent'>$name</a>" # GOOD FOR WITHOUT WEB SERVER
+    
+    
+   # "<tr><td>$link</td><td>$($_.LastWriteTime)</td><td>$($_.Length)</td></tr>"
+  "<li>$link</li>"
+}
+
+# Convert each item to an HTML table row with a hyperlink
+# $htmlRows = $items | ForEach-Object {
+#     $name = $_.Name
+#     $fullName = $_.FullName
+
+#     Write-host " $relativePath"
+#     #$link = "<a href='file:///$fullName' target='iframe_a' target='_Parent'>$name</a>" # GOOD FOR WITHOUT WEB SERVER
+#     $link = "<a href='SourceFiles\exam\$name' target='iframe_a' target='_Parent'>$name</a>" # GOOD FOR WITHOUT WEB SERVER
+    
+    
+#    # "<tr><td>$link</td><td>$($_.LastWriteTime)</td><td>$($_.Length)</td></tr>"
+#   "<li>$link</li>"
+# }
+
+# Build the complete HTML content
+$htmlContent = @"
+<!DOCTYPE html>
 <html>
 <!--  https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp -->
 <head>
@@ -129,7 +165,7 @@
 
 <ul id="myUL">
 
-<li><a href='./ping server and scan port.html' target='iframe_a' target='_Parent'>ping server and scan port</a></li>
+$htmlRows
 
   &nbsp;
   &nbsp;
@@ -143,7 +179,7 @@
 
   <div class="main">
     <h2>WELCOME</h2>
-    <iframe src=".\home.html" name="iframe_a" width="100%" height="600px" style="border:2px solid lightgray;background-color: #F3F3F3;" title="Iframe Example"></iframe>
+    <iframe src="$homepage" name="iframe_a" width="100%" height="600px" style="border:2px solid lightgray;background-color: #F3F3F3;" title="Iframe Example"></iframe>
   </div>
 
 <!-- https://www.w3schools.com/howto/howto_js_filter_lists.asp -->
@@ -175,3 +211,12 @@
 
 </html>
 
+"@
+
+# Specify the output file path
+$outputFilePath = ".\index.html"
+
+# Save the HTML content to the file
+$htmlContent | Out-File -FilePath $outputFilePath -Encoding utf8
+
+Write-Output "HTML file created at $outputFilePath"

@@ -1,0 +1,52 @@
+body {
+      font-family: "Lato", sans-serif;
+    }
+
+.code-container {
+    position: relative;
+    background-color: #ffffff; /* Overall container background */
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    overflow-x: auto; /* Adds horizontal scrolling */
+    white-space: pre; /* Ensures code formatting is maintained */
+}
+
+pre code {
+    background-color: #f0f8ff; /* Light blue background for the code */
+    padding: 10px;
+    border-radius: 3px;
+    display: block;
+    font-size: 14px; /* Adjust font size if needed */
+    line-height: 1.5; /* Improves readability */
+}
+
+.copy-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 10; /* Ensures the button is on top of the code */
+}
+
+.copy-button:hover {
+    background-color: #0056b3;
+}
+
+.copy-message {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 5px;
+    background-color: #4caf50;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+}

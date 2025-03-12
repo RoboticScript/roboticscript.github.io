@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerShell Code Highlighting</title>
+    <!-- Link to external CSS file -->
+    <link href="styles.css" rel="stylesheet">
+    <!-- Include Prism.js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet">
+</head>
+<body>
+    <h3>PING SERVER & CHECK PORTS</h3>
+    <div class="code-container">
+        <button class="copy-button" onclick="copyCode()">Copy</button>
+        <div class="copy-message" id="copyMessage">Copied!</div>
+        <pre><code id="code" class="language-powershell">
+# MANUALLY DEFINE THE LIST OF DOMAIN CONTROLLERS
+$DCs = @(
+    "DC1.domain.com",
+    "DC2.domain.com",
+    "DC3.domain.com"
+    # ADD ALL 50 DCS HERE
+)
+
+# DEFINE PORTS TO CHECK
+$ports = @(53, 88, 135, 389, 445, 636, 3268, 3269)
+
+# INITIALIZE AN ARRAY TO STORE RESULTS
+$results = @()
+
+# LOOP THROUGH EACH DC AND CHECK PORTS AND PING STATUS
+foreach ($dc in $DCs) {
+    # CHECK PING STATUS
+    $ping = Test-Connection -ComputerName $dc -Count 2 -Quiet
+
+    # INITIALIZE A RESULT OBJECT
+    $result = [PSCustomObject]@{
+        DomainController = $dc
+        PingStatus       = if ($ping) { "Reachable" } else { "Unreachable" }
+    }
+
+    # CHECK EACH PORT AND ADD THE RESULT DYNAMICALLY
+    foreach ($port in $ports) {
+        $connection = Test-NetConnection -ComputerName $dc -Port $port -InformationLevel Detailed
+        $result | Add-Member -MemberType NoteProperty -Name "Port_$port" -Value (if ($connection.TcpTestSucceeded) { "Open" } else { "Closed" })
+    }
+
+    # ADD THE RESULT TO THE RESULTS ARRAY
+    $results += $result
+}
+
+# EXPORT THE RESULTS TO A CSV FILE
+$results | Export-Csv -Path "C:\DC_Port_Status.csv" -NoTypeInformation
+
+Write-Host "Port and ping check completed. Results saved to C:\DC_Port_Status.csv"
+        </code></pre>
+    </div>
+
+    <!-- Include Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-powershell.min.js"></script>
+    <!-- Link to external JavaScript file -->
+    <script src="scripts.js"></script>
+</body>
+</html>
